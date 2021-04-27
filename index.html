@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>Frontend Mentor | Base Apparel coming soon page</title>
+
+
+  </style>
+</head>
+
+<body>
+  <main>
+
+    <div class="img">
+      <img src="images/hero-mobile.jpg" alt="" class="mobile">
+      <img src="images/hero-desktop.jpg" alt="" class="deskopt">
+
+    </div>
+    <section class="ad">
+      <div class="logo">
+        <img src="images/logo.svg" alt="">
+      </div>
+      <h1> <span class="we"> We're </span> <span class="come"> coming</span> <span class="come"> soon</span>
+
+      </h1>
+      <p> Hello fellow shoppers! We're currently building our new fashion store.
+        Add your email below to stay up-to-date with announcements and our launch deals.
+      </p>
+      <div class="mail">
+        <form action="">
+          <input type="text" placeholder="E-mail Address" id="mail">
+          <button type="submit"><img src="images/icon-arrow.svg" alt=""></button>
+        </form>
+
+
+        <img class="error" src="images/icon-error.svg" alt="error">
+      </div>
+      <div class="info">
+
+        <p> </p>
+      </div>
+
+
+
+    </section>
+
+  </main>
+
+</body>
+<script>
+  const form = document.querySelector('form');
+  const alert = document.querySelector(".info p");
+  const imgEr = document.querySelector(".error");
+
+
+
+
+  form.addEventListener('submit', function (e) {
+    const formContains = document.getElementById("mail").value;
+    const reg =
+      /^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$/;
+
+    if (!reg.test(formContains)) {
+      e.preventDefault();
+
+      alert.textContent = "Please provide a valid e-mail";
+      imgEr.classList.add('active')
+
+
+    } else {
+      return null
+    }
+
+  })
+</script>
+
+</html>
