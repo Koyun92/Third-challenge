@@ -15,8 +15,7 @@ body {
 
 main {
   width: 100vw;
-  max-height: 100vh;
-  margin-top: 90px;
+  margin-top: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -36,7 +35,7 @@ main .img .mobile {
 }
 
 main .ad {
-  padding: 40px 40px;
+  padding: 20px 40px;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   display: -webkit-box;
@@ -54,7 +53,7 @@ main .ad .logo {
   top: 0;
   left: 0;
   max-width: 100vw;
-  height: 90px;
+  height: 60px;
 }
 
 main .ad .logo img {
@@ -151,6 +150,9 @@ main .info p {
 }
 
 @media (min-width: 1000px) and (orientation: landscape) {
+  body {
+    background-size: 100%;
+  }
   main {
     margin-top: 15vh;
     margin-left: calc((15vw + ((35vw - 391px)/2)));
